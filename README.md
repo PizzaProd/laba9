@@ -242,7 +242,7 @@ int main() {
 ```
 
 3. Результат выполнения программы
-
+```
 ========== LABORATORY WORK #9 + #10 ==========
 
 --- 1. Initial data ---
@@ -362,3 +362,4 @@ Everest           8848.86     Nepal/China         Himalai           Folded
 Read 20 peaks from file.
 
 ========== PROGRAM COMPLETED ==========
+```
