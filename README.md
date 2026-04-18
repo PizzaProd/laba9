@@ -127,13 +127,14 @@ void create_heights_file() {
         cout << "Error creating file!" << endl;
         return;
     }
-    // Данные совпадают с init_list
-    fout << "Everest 8848.86\n";
-    fout << "K2 8612.00\n";
-    fout << "Elbrus 5643.00\n";
-    fout << "Denali 6191.00\n";
+    
+    // Записываем все 20 вершин в файл (массив уже отсортирован!)
+    for (int i = 0; i < SIZE; i++) {
+        fout << mountains[i].name << " " << mountains[i].height << endl;
+    }
+    
     fout.close();
-    cout << "File 'heights.txt' created successfully." << endl;
+    cout << "File 'heights.txt' created successfully. Saved " << SIZE << " peaks." << endl;
 }
 
 void read_heights_from_file() {
@@ -296,16 +297,12 @@ Everest           8848.86     Nepal/China         Himalai           Folded
 ========== FILE OPERATIONS ==========
 
 --- 3. Creating text file ---
-File 'heights.txt' created successfully.
+File 'heights.txt' created successfully. Saved 20 peaks.
 
 --- 4. Reading text file and updating ---
 
 --- Reading from heights.txt ---
-Updated: Everest (8848.86 -> 8848.86 m)
-Updated: K2 (8611.00 -> 8612.00 m)
-Updated: Elbrus (5642.00 -> 5643.00 m)
-Updated: Denali (6190.00 -> 6191.00 m)
-Total updated: 4 peaks.
+Total updated: 0 peaks.
 
 --- 5. Data after text file update ---
 Name              Height      Country             Region            Type
@@ -316,9 +313,9 @@ Matterhorn        4478.00     Switzerland/Italy   Alps              Folded
 Mont Blanc        4807.00     France/Italy        Alps              Folded
 Kazbek            5047.00     Russia/Georgia      Kavkaz            Volcanic
 Popocatepetl      5426.00     Mexico              Pop.Sierra        Volcanic
-Elbrus            5643.00     Russia              Kavkaz            Volcanic
+Elbrus            5642.00     Russia              Kavkaz            Volcanic
 Kilimanjaro       5895.00     Tanzania            E.Africa          Volcanic
-Denali            6191.00     USA                 Alaska            Folded
+Denali            6190.00     USA                 Alaska            Folded
 Aconcagua         6961.00     Argentina           Andes             Folded
 Annapurna I       8091.00     Nepal               Himalai           Folded
 Nanga Parbat      8126.00     Pakistan            Himalai           Folded
@@ -328,7 +325,7 @@ Cho Oyu           8188.00     Nepal/China         Himalai           Folded
 Makalu            8485.00     Nepal/China         Himalai           Folded
 Lhotse            8516.00     Nepal/China         Himalai           Folded
 Kanchendzanga     8586.00     Nepal/India         Himalai           Folded
-K2                8612.00     Pakistan/China      Karakorum         Folded
+K2                8611.00     Pakistan/China      Karakorum         Folded
 Everest           8848.86     Nepal/China         Himalai           Folded
 
 --- 6. Writing to binary file ---
@@ -345,9 +342,9 @@ Matterhorn        4478.00     Switzerland/Italy   Alps              Folded
 Mont Blanc        4807.00     France/Italy        Alps              Folded
 Kazbek            5047.00     Russia/Georgia      Kavkaz            Volcanic
 Popocatepetl      5426.00     Mexico              Pop.Sierra        Volcanic
-Elbrus            5643.00     Russia              Kavkaz            Volcanic
+Elbrus            5642.00     Russia              Kavkaz            Volcanic
 Kilimanjaro       5895.00     Tanzania            E.Africa          Volcanic
-Denali            6191.00     USA                 Alaska            Folded
+Denali            6190.00     USA                 Alaska            Folded
 Aconcagua         6961.00     Argentina           Andes             Folded
 Annapurna I       8091.00     Nepal               Himalai           Folded
 Nanga Parbat      8126.00     Pakistan            Himalai           Folded
@@ -357,7 +354,7 @@ Cho Oyu           8188.00     Nepal/China         Himalai           Folded
 Makalu            8485.00     Nepal/China         Himalai           Folded
 Lhotse            8516.00     Nepal/China         Himalai           Folded
 Kanchendzanga     8586.00     Nepal/India         Himalai           Folded
-K2                8612.00     Pakistan/China      Karakorum         Folded
+K2                8611.00     Pakistan/China      Karakorum         Folded
 Everest           8848.86     Nepal/China         Himalai           Folded
 Read 20 peaks from file.
 
